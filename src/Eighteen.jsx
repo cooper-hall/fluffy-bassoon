@@ -1,7 +1,16 @@
 import Modal from './Modal'
+import {useState} from 'react'
 
 
-function Eighteen ({recipeCards, showModal}) {
+function Eighteen ({recipeCards, showModal, setShowModal}) {
+
+const [selectedCard, setSelectedCard] = useState([])
+
+const display = (clicked) => {
+  setSelectedCard(clicked)
+  setShowModal(true)
+}
+
   return (
     <div className="big big div">
       {
@@ -13,12 +22,16 @@ function Eighteen ({recipeCards, showModal}) {
                 <h2>{recps.name}</h2>
                 <p>{recps.description}</p>
               </div>
-              <Modal showModal={showModal}/>
+              <div>
+                <button onClick={()=> display(recps)}>Modal Info!</button>
+              </div>
             </div>
           )
-        })
-
+        }
+        )
+        
       }
+      {showModal && <Modal setShowModal={setShowModal} recipeCards={recipeCards} selectedCard={selectedCard}/>}
     </div>
   )
 }
