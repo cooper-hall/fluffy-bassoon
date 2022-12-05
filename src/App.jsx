@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import React from "react"
 import Eighteen from './Eighteen'
+import Submit from './Submit'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <div>
         <Eighteen recipeCards={recipeCards} showModal={showModal} setShowModal={setShowModal}/>
         <hr/>
+        <Submit />
       </div>
     </div>
   )
