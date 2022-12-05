@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import React from "react"
 import Eighteen from './Eighteen'
+import Submit from "./Submit"
+
 
 
 function App() {
   
   const[recipeCards, setRecipeCards] = useState([])
   const[showModal, setShowModal] = useState(false)
-
+  
   useEffect(()=> {
     const request = async () => {
       let req = await fetch ('http://localhost:3000/recipes')
@@ -23,6 +25,8 @@ function App() {
      <h1 className='header'>Ye Olde Mom n' Pop Recipe Shoppe</h1>
       <div>
         <Eighteen recipeCards={recipeCards} showModal={showModal}/>
+        <hr />
+        <Submit />
       </div>
     </div>
   )
