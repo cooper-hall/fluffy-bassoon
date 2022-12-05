@@ -23,6 +23,7 @@ function App() {
      <h1 className='header'>Ye Olde Mom n' Pop Recipe Shoppe</h1>
       <div>
         <Eighteen recipeCards={recipeCards} showModal={showModal}/>
+        <hr/>
       </div>
     </div>
   )
