@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import React from "react"
 import Eighteen from './Eighteen'
+import Submit from "./Submit"
+
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
      <h1 className='header'>Ye Olde Mom n' Pop Recipe Shoppe</h1>
       <div>
         <Eighteen recipeCards={recipeCards} showModal={showModal}/>
+        <hr />
+        <Submit />
       </div>
     </div>
   )
